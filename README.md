@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-BSD-lightgrey.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/appium/WebDriverAgent.svg?branch=master)](https://travis-ci.org/appium/WebDriverAgent)
 
-WebDriverAgent is a [WebDriver server](https://w3c.github.io/webdriver/webdriver-spec.html) implementation for iOS that can be used to remote control iOS devices. It allows you to launch & kill applications, tap & scroll views or confirm view presence on a screen. This makes it a perfect tool for application end-to-end testing or general purpose device automation. It works by linking `XCTest.framework` and calling Apple's API to execute commands directly on a device. WebDriverAgent is developed for end-to-end testing and is successfully adopted by [Appium](http://appium.io) via [XCUITest driver](https://github.com/appium/appium-xcuitest-driver).
+WebDriverAgent is an [WebDriver endpoint node](https://w3c.github.io/webdriver/#nodes) (aka WebDriver server) implementation for iOS that can be used to remote control iOS devices. It allows you to launch & kill applications, tap & scroll views or confirm view presence on a screen. This makes it a perfect tool for application end-to-end testing or general purpose device automation. It works by linking `XCTest.framework` and calling Apple's API to execute commands directly on a device. WebDriverAgent is developed for end-to-end testing and is successfully adopted by [Appium](http://appium.io) via [XCUITest driver](https://github.com/appium/appium-xcuitest-driver).
 
 ## Features
  * Both iOS and tvOS platforms are supported with device & simulator
