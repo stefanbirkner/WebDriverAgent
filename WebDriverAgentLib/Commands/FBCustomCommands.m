@@ -125,20 +125,22 @@
       NSArray<XCUIElement *> *matchedKeys = [[request.session.activeApplication.keyboard
                                               descendantsMatchingType:XCUIElementTypeKey]
                                              matchingPredicate:searchPredicate].allElementsBoundByIndex;
-      for (XCUIElement *matchedKey in matchedKeys) {
-        if (!matchedKey.exists) {
-          continue;
-        }
+      if (nil != matchedKeys && matchedKeys.count > 0) {
+        for (XCUIElement *matchedKey in matchedKeys) {
+          if (!matchedKey.exists) {
+            continue;
+          }
 
-        [matchedKey tap];
-        if (isKeyboardInvisible()) {
-          return FBResponseWithOK();
+          [matchedKey tap];
+          if (isKeyboardInvisible()) {
+            return FBResponseWithOK();
+          }
         }
       }
     } else {
       // If no key names are provided then simply try to tap the last keyboard button
       NSArray<XCUIElement *> *allKeyboardKeys = request.session.activeApplication.keyboard.keys.allElementsBoundByIndex;
-      if (allKeyboardKeys.count > 0) {
+      if (nil != allKeyboardKeys && allKeyboardKeys.count > 0) {
         [allKeyboardKeys[allKeyboardKeys.count - 1] tap];
       }
     }
