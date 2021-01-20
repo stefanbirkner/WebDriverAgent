@@ -137,8 +137,10 @@
           }
         }
       }
-    } else {
-      // If no key names are provided then simply try to tap the last keyboard button
+    }
+
+    if ([UIDevice.currentDevice userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+      // Try to tap the last keyboard button, which is the HIDE_KEYOBOARD one on iPad
       NSArray<XCUIElement *> *allKeyboardKeys = request.session.activeApplication.keyboard.keys.allElementsBoundByIndex;
       if (nil != allKeyboardKeys && allKeyboardKeys.count > 0) {
         [allKeyboardKeys[allKeyboardKeys.count - 1] tap];
